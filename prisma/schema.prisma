@@ -17,7 +17,7 @@ datasource db {
 model Request {
   id        String   @id @default(uuid()) @unique
   status    String
-  content   String
+  content   String  
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -26,8 +26,8 @@ model Request {
 model ThirdPartyRequest {
   requestId  String   @id @unique
   status    String
-  thirdPartyRequestId String
-
+  thirdPartyRequestId String @unique
+  thirdPartyResponse String
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
 }
